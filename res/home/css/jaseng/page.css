@@ -1,0 +1,64 @@
+.page_header {background: url("/res/home/img/jaseng/common/img_slide01.png");background-size: cover !important;background-position-y: center !important;background-position-x: 70% !important;text-align: center;}
+.page_header .subpage_title {margin: 0px;color: white;font-family: "Open Sans SemiBold", sans-serif;line-height: 1;}
+
+@media screen and (min-width:1360px) {
+    .page_header {margin-top: 100px;height: 150px;}
+    .page_header .subpage_title {padding-top: 42px;font-size: 32px;}
+}
+@media screen and (min-width:768px) and (max-width:1359px) {
+    .page_header {margin-top: 60px;height: 150px;}
+    .page_header .subpage_title {padding-top: 46px;font-size: 28px;}
+}
+@media screen and (max-width:767px) {
+    .page_header {margin-top: 60px;height: 150px;}
+    .page_header .subpage_title {padding-top: 46px;font-size: 26px;}
+}
+
+
+/* BreadCrumb */
+.breadcrumb {}
+.breadcrumb .breadcrumb_item {display: inline-block;vertical-align: middle;font-family: "Open Sans Regular", sans-serif;color: white;}
+.breadcrumb .breadcrumb_arrow {display: inline-block;vertical-align: middle;}
+.breadcrumb .breadcrumb_subnav_arrow {display: inline-block;vertical-align: middle;cursor: pointer;}
+
+@media screen and (min-width:1360px) {
+    .breadcrumb {margin-top: 20px;}
+    .breadcrumb .breadcrumb_item {font-size: 14px;}
+    .breadcrumb .breadcrumb_arrow {height: 10px;margin: 0px 20px;}
+    .breadcrumb .breadcrumb_subnav_arrow {width: 10px;margin-left: 15px;}
+}
+@media screen and (min-width:768px) and (max-width:1359px) {
+    .breadcrumb {margin-top: 25px;}
+    .breadcrumb .breadcrumb_item {font-size: 12px;}
+    .breadcrumb .breadcrumb_arrow {height: 8px;margin: 0px 10px;}
+}
+@media screen and (max-width:767px) {
+    .breadcrumb {margin-top: 25px;}
+    .breadcrumb .breadcrumb_item {font-size: 12px;}
+    .breadcrumb .breadcrumb_arrow {height: 8px;margin: 0px 10px;}
+}
+
+/* BreadCrumb submenu*/
+
+
+@media screen and (min-width:1360px) {
+    .breadcrumb_submenu {
+        display: none;
+    }
+
+    .breadcrumb_submenu.showing {
+        display: block;
+        position: absolute;
+        background: #1c2535;
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+        width: 260px;
+    }
+    .breadcrumb_submenu.showing .breadcrumb_submenu_item {
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
