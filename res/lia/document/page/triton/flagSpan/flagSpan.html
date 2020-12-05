@@ -1,0 +1,23 @@
+
+<div id="flagSpan_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.FlagSpan({
+        appendTo : $('#flagSpan_ex'),
+        theme : Triton.FlagSpan.Theme.OrderBy,
+        content : '순서변경'
+    });
+
+    new Triton.FlagSpan({
+        appendTo : $('#flagSpan_ex'),
+        theme : Triton.FlagSpan.Theme.NamDelete,
+        content : '이름삭제',
+        onClick : function () {
+            alert('이름 삭제!');
+        }
+    });
+
+</script>

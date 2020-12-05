@@ -1,0 +1,74 @@
+<div>
+
+    <div class="page_title" triton-content="PageManager"></div>
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· 정의</div>
+
+        <div class="paragraph_body">
+            Single-Page-Application 형태의 WebPage 제작을 위한 모듈 Ajax로 HTML, CSS, JS를 로딩하여 DOM에 추가한 뒤<br/>
+            실행 History.js 라이브러리 사용하여 주소 이동 감지<br/><br/>
+
+            페이지 ReLoading 없이 변경되어야 되는 화면만 변경 가능<br/>
+            페이지별 HTML, CSS, JS 파일 관리 가능
+        </div>
+
+    </div>
+
+
+    <div class="paragraph">
+
+        <p class="paragraph_title">· 경로</p>
+
+        <div class="paragraph_body">
+            Lia의 파일들은 웹 페이지의 /res/lia 경로에 존재하는 것을 가정합니다.<br/>
+            만약 해당 경로 외의 경로로 설정하시려면 리소스 파일들의 경로들을 모두 변경하여야 합니다.
+        </div>
+
+    </div>
+
+    <div class="paragraph">
+
+        <p class="paragraph_title">· 파일 호출순서</p>
+
+        <div class="paragraph_body">
+            · ?m1=admin&m2=list<br/>
+            &nbsp;&nbsp;&nbsp;· /admin.js <span style="color: #0000FF;">onInit</span><br/>
+            &nbsp;&nbsp;&nbsp;· /admin/list.js <span style="color: #0000FF;">onInit</span><br/>
+            &nbsp;&nbsp;&nbsp;· /admin.js <span style="color: #47C83E;">onChange</span><br/>
+            &nbsp;&nbsp;&nbsp;· /admin/list.js <span style="color: #47C83E;">onChange</span><br/><br/>
+
+            · ?m1=admin&m2=list&p=10<br/>
+            &nbsp;&nbsp;&nbsp;· /admin.js <span style="color: #47C83E;">onChange</span><br/>
+            &nbsp;&nbsp;&nbsp;· /admin/list.js <span style="color: #47C83E;">onChange</span><br/><br/>
+
+            · ?m1=admin&m2=detail<br/>
+            &nbsp;&nbsp;&nbsp;· /admin.js <span style="color: #FF0000;">onRelease</span><br/>
+            &nbsp;&nbsp;&nbsp;· /admin/detail.js <span style="color: #0000FF;">onInit</span><br/>
+            &nbsp;&nbsp;&nbsp;· /admin.js <span style="color: #47C83E;">onChange</span><br/>
+            &nbsp;&nbsp;&nbsp;· /admin/detail.js <span style="color: #47C83E;">onChange</span><br/><br/>
+
+            · ?m1=user&m2=list&m3=comment<br/>
+            &nbsp;&nbsp;&nbsp;· /admin/list.js <span style="color: #FF0000;">onRelease</span><br/>
+            &nbsp;&nbsp;&nbsp;· /admin.js <span style="color: #FF0000;">onRelease</span><br/>
+            &nbsp;&nbsp;&nbsp;· /user.js <span style="color: #0000FF;">onInit</span><br/>
+            &nbsp;&nbsp;&nbsp;· /user/list.js <span style="color: #0000FF;">onInit</span><br/>
+            &nbsp;&nbsp;&nbsp;· /user.js <span style="color: #47C83E;">onChange</span><br/>
+            &nbsp;&nbsp;&nbsp;· /user/list.js <span style="color: #47C83E;">onChange</span><br/>
+            &nbsp;&nbsp;&nbsp;· /user/list/comment.js <span style="color: #47C83E;">onChange</span>
+        </div>
+
+    </div>
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">
+            · Sample Code
+        </div>
+
+        <div class="code_editor_sample_code" filename="pagemanager.html"></div>
+
+    </div>
+
+</div>

@@ -1,0 +1,54 @@
+<div>
+
+    <div class="page_title" triton-content="UI Component"></div>
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· Introduction</div>
+
+        <div class="paragraph_body">
+            Triton에서는 반응형 웹을 위한 제반 사항들을 제공합니다.<br/>
+            device-width를 기준으로 컴포넌트 형태를 산정하며 pc, tablet, mobile을 구분하는 width 기준점을 설정할 수 있습니다.
+        </div>
+
+    </div>
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· 초기화 및 적용</div>
+
+        <div class="paragraph_body">
+            <xmp>Triton.initResponsive(defaultResponsive, responsiveTabletWidth, responsiveMobileWidth);</xmp>
+        </div>
+
+        <div class="paragraph_body">
+            defaultResponsive : 기본 반응형 설정 여부<br/>
+            responsiveTabletWidth : tablet 화면 기준 width<br/>
+            responsiveMobileWidth : mobile 화면 기준 width<br/>
+        </div>
+
+        <div class="paragraph_body">
+            <xmp>Triton.applyResponsive( force, j );</xmp>
+        </div>
+
+        <div class="paragraph_body">
+            force : 강제 실행 여부, true면 모든 상황에서 실행, false 이면 화면 전환시에만 실행<br/>
+            j : 적용할 jquery 객체
+        </div>
+
+    </div>
+
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· 활용법</div>
+
+        <div class="paragraph_body">
+            Triton객체 생성시 init함수 options값에 responsive : true 를 설정하면 반응형 객체로서 동작합니다.<br/>
+            theme나 options상에 pcCss, tabletCss, mobileCss를 넣어주면 해당 상황에 맞는 스타일이 해당 객체에 적용됩니다.<br/>
+        </div>
+
+    </div>
+
+
+</div>

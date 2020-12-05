@@ -1,0 +1,27 @@
+
+<div id="addressInput_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.AddressInput({
+        appendTo : $('#addressInput_ex'),
+        searchType: Triton.AddressInput.SearchType.DAUM,
+
+        address1Options: {
+            form: {name: 'postcode'}
+        },
+        //address2Options : {
+        //    form : { name : 'address2'},
+        //    value : zipCode2
+        //},
+        address3Options: {
+            form: {name: 'address1'}
+        },
+        address4Options: {
+            form: {name: 'address2'}
+        }
+    });
+
+</script>

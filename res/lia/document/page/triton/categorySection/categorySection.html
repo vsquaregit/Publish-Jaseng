@@ -1,0 +1,24 @@
+
+<div id="categorysection_ex" style="width: 500px; border: 1px solid #e1e1e1; margin-top: 10px;">
+</div>
+
+
+<script type="text/javascript">
+
+    var categorySection = new Triton.CategorySection({
+        appendTo : $('#categorysection_ex')
+    });
+
+    categorySection.appendToRight(new Triton.ComboBox({
+        optionList : [
+            {name : '오른쪽 배치', value : ''}
+        ]
+    }));
+
+    categorySection.appendToLeft(new Triton.ComboBox({
+        optionList : [
+            {name : '왼쪽 배치', value : ''}
+        ]
+    }));
+
+</script>

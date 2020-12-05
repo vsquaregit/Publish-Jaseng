@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Pragma" content="No-Cache" />
+    <meta http-equiv="Cache-Control" content="No-Cache" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+    <title>Editor</title>
+
+    <link rel="stylesheet" type="text/css" href="/res/lia/lia.css"/>
+    <link rel="stylesheet" type="text/css" href="/res/lia/font/nanum.css"/>
+    <link rel="stylesheet" type="text/css" href="/res/lia/font/nanum_barun.css"/>
+
+    <script src="/res/lia/vendor/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/res/lia/lia.all.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript" src="/res/lia/vendor/smarteditor/js/service/HuskyEZCreator.js"></script>
+
+    <style type="text/css">
+
+        body {
+            background-color:#ffffff;
+            overflow:hidden;
+        }
+
+        #wrapper {
+            width:100%;
+            height:100%;
+        }
+
+        iframe {
+            width:100%;
+            height:100% !important;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="wrapper">
+
+    <textarea id="texteditor" style="width:100%;height:100%;display:none;"></textarea>
+
+    <script>
+
+        var inited = false;
+        var initialValue = undefined;
+
+        var oEditors = [];
+
+        var sLang = "ko_KR";	// 언어 (ko_KR/ en_US/ ja_JP/ zh_CN/ zh_TW), default = ko_KR
+
+        // 추가 글꼴 목록
+        //var aAdditionalFontSet = [["MS UI Gothic", "MS UI Gothic"], ["Comic Sans MS", "Comic Sans MS"],["TEST","TEST"]];
+
+        nhn.husky.EZCreator.createInIFrame({
+            oAppRef: oEditors,
+            elPlaceHolder: "texteditor",
+            sSkinURI: "/res/lia/vendor/smarteditor/SmartEditor2Skin.html?_=" + Lia.getTimestamp(),
+            htParams : {
+                bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+                bUseVerticalResizer : false,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+                bUseModeChanger : true,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+                //bSkipXssFilter : true,		// client-side xss filter 무시 여부 (true:사용하지 않음 / 그외:사용)
+                //aAdditionalFontList : aAdditionalFontSet,		// 추가 글꼴 목록
+                fOnBeforeUnload : function(){
+                    //alert("완료!");
+                },
+                I18N_LOCALE : sLang
+            }, //boolean
+            fOnAppLoad : function(){
+
+                inited = true;
+
+                if ( initialValue != undefined ) {
+                    setEditorValue(initialValue);
+                    initialValue = undefined;
+                }
+            },
+            fCreator: "createSEditor2"
+        });
+
+
+        function getEditorValue() {
+            if ( !inited ) {
+                return '';
+            }
+
+            oEditors.getById["texteditor"].exec("UPDATE_CONTENTS_FIELD", []);
+
+            var text = $("#texteditor").val();
+            if ( text == '<p><br></p>' ) {
+                return '';
+            }
+
+            return text;
+        }
+
+        function setEditorValue(value) {
+
+            if ( inited == true ) {
+
+                $("#texteditor").val(value);
+                oEditors.getById["texteditor"].exec("LOAD_CONTENTS_FIELD");
+
+            } else {
+                initialValue = value;
+            }
+        }
+
+        function attachEditorValue(value) {
+
+            if ( inited == true ) {
+
+                oEditors.getById["texteditor"].exec("PASTE_HTML", [value]);
+            }
+        }
+
+    </script>
+</div>
+
+</body>
+</html>

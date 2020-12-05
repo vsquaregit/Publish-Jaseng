@@ -1,0 +1,100 @@
+
+<div id="flagRadioButton_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var page = this;
+
+    var topFlagSection = new Triton.FlagRadioButtonSection({
+        flagRadioButtonTheme: Triton.FlagRadioButton.Theme.Category,
+        theme: Triton.FlagRadioButtonSection.Theme.Category,
+        appendTo: $('#flagRadioButton_ex'),
+        css: {'position': 'absolute', 'left': 0, 'top': '10px'},
+        onSelected: function (val) {
+            // PageManager.cpcpm({ 'category_id' : val });
+        }
+    });
+
+    topFlagSection.appendFlagRadioButton({
+        addClass: 'top_flag_radio_button',
+        link: false,
+        manual: true,
+        css: {
+            'float': 'left'
+        },
+        theme: Triton.FlagRadioButton.Theme.Category,
+        content: '첫번째',
+        option: {
+            name: '첫번째',
+            value: 10
+        },
+        flagOptions: {
+            css: {
+                'color': '#80d2d9',
+                'background-color': '#000'
+            }
+        },
+        onClickMoreButton: function (options) {
+
+            var jThis = $(this);
+
+        }
+    });
+
+    topFlagSection.appendFlagRadioButton({
+        addClass: 'top_flag_radio_button',
+        link: false,
+        manual: true,
+        css: {
+            'float': 'left'
+        },
+        status : Triton.FlagRadioButton.Status.PRESSED,
+        theme: Triton.FlagRadioButton.Theme.Category,
+        content: '두번째',
+        option: {
+            name: '두번째',
+            value: 20
+        },
+        flagOptions: {
+            css: {
+                'color': '#80d2d9',
+                'background-color': '#FF0000'
+            }
+        },
+        onClickMoreButton: function (options) {
+
+            var jThis = $(this);
+
+        }
+    });
+
+    topFlagSection.appendFlagRadioButton({
+        addClass: 'top_flag_radio_button',
+        link: false,
+        manual: true,
+        css: {
+            'float': 'left'
+        },
+        status : Triton.FlagRadioButton.Status.INACTIVE,
+        theme: Triton.FlagRadioButton.Theme.Category,
+        content: '세번째',
+        option: {
+            name: '세번째',
+            value: 30
+        },
+        flagOptions: {
+            css: {
+                'color': '#80d2d9',
+                'background-color': '#c8dadb',
+            }
+        },
+        onClickMoreButton: function (options) {
+
+            var jThis = $(this);
+
+        }
+    });
+
+</script>

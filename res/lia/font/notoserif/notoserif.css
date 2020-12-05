@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'notoserif-black';
+    src: local('Noto Serif CJK KR Black'), url(NotoSerifKR-Black.woff) format('woff'),url(NotoSerifKR-Black.woff2) format('woff2'), url(NotoSerifKR-Black.otf) format('otf');
+}
+@font-face {
+    font-family: 'notoserif-bold';
+    src: local('Noto Serif CJK KR Bold'), url(NotoSerifKR-Bold.woff) format('woff'),url(NotoSerifKR-Bold.woff2) format('woff2'), url(NotoSerifKR-Bold.otf) format('otf');
+}
+@font-face {
+    font-family: 'notoserif-semiBold';
+    src: local('Noto Serif CJK KR SemiBold'), url(NotoSerifKR-SemiBold.woff) format('woff'),url(NotoSerifKR-SemiBold.woff2) format('woff2'), url(NotoSerifKR-semiBold.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'notoserif-medium';
+    src: local('Noto Serif CJK KR Medium'), url(NotoSerifKR-Medium.woff) format('woff'),url(NotoSerifKR-Medium.woff2) format('woff2'), url(NotoSerifKR-Medium.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'notoserif-regular';
+    src: local('Noto Serif CJK KR Regular'), url(NotoSerifKR-Regular.woff) format('woff'),url(NotoSerifKR-Regular.woff2) format('woff2'), url(NotoSerifKR-Regular.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'notoserif-light';
+    src: local('Noto Serif CJK KR Light'), url(NotoSerifKR-Light.woff) format('woff'),url(NotoSerifKR-Light.woff2) format('woff2'), url(NotoSerifKR-Light.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'notoserif-extraLight';
+    src: local('Noto Serif CJK KR ExtraLight'), url(NotoSerifKR-ExtraLight.woff) format('woff'),url(NotoSerifKR-ExtraLight.woff2) format('woff2'), url(NotoSerifKR-ExtraLight.otf) format('otf');
+}

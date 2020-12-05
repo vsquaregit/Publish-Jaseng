@@ -1,0 +1,43 @@
+
+<div id="datetimeperiod_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var currentDate = new Date();
+
+    var topSection = new Triton.Section({
+        appendTo : $('#datetimeperiod_ex')
+    });
+
+    new Triton.DatetimePeriodPicker({
+        appendTo: topSection,
+        startOptions: {
+            type: Triton.DatetimePicker.TYPE_DATETIME,
+            value: '2019-01-01 00:00:00'
+        },
+        endOptions: {
+            type: Triton.DatetimePicker.TYPE_DATETIME
+        }
+    });
+
+    var bottomSection = new Triton.Section({
+        appendTo : $('#datetimeperiod_ex'),
+        css : {
+            'margin-top' : '10px'
+        }
+    });
+
+    new Triton.DatetimePeriodPicker({
+        appendTo : bottomSection,
+        startOptions: {
+            type: Triton.DatetimePicker.TYPE_DATE
+        },
+        endOptions: {
+            type: Triton.DatetimePicker.TYPE_DATETIME
+        }
+    });
+
+
+</script>

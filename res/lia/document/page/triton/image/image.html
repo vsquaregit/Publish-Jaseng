@@ -1,0 +1,58 @@
+
+<div id="image_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.Image({
+        appendTo : $('#image_ex'),
+        theme : Triton.Image.Theme.Private,
+        css : {'display' : 'block'},
+        onClick : function () {
+
+            alert('잠금 버튼 클릭!');
+        }
+    });
+
+//    new Triton.Image({
+//        appendTo : $('#image_ex'),
+//        theme : Triton.Image.Theme.CommentButton,
+//        css : {'display' : 'block'},
+//        onClick : function () {
+//
+//            alert('잠금 버튼 클릭!');
+//        }
+//    });
+//
+//    new Triton.Image({
+//        appendTo : $('#image_ex'),
+//        theme : Triton.Image.Theme.CommentButtonDel,
+//        css : {'display' : 'block'},
+//        onClick : function () {
+//
+//            alert('잠금 버튼 클릭!');
+//        }
+//    });
+//
+//    new Triton.Image({
+//        appendTo : $('#image_ex'),
+//        theme : Triton.Image.Theme.CommentButtonEdit,
+//        css : {'display' : 'block'},
+//        onClick : function () {
+//
+//            alert('잠금 버튼 클릭!');
+//        }
+//    });
+
+    new Triton.Image({
+        appendTo : $('#image_ex'),
+        attr: {'src': '/res/cms/img/content/btn_delete.png'},
+        css : {'display' : 'block', 'margin-top' : '10px'},
+        onClick : function () {
+
+            alert('삭제 버튼 클릭!');
+        }
+    });
+
+</script>

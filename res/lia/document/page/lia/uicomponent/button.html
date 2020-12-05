@@ -1,0 +1,71 @@
+
+<style type="text/css">
+
+    .button {
+        background:#666666;
+        color:#ffffff;
+        border:1px solid #000000;
+        font-family: notokr-regular, NanumGothic;
+        height:100px;
+        width:200px;
+        text-align: center;
+        line-height: 100px;
+    }
+
+    .button.hovering {
+        background:#0000ff;
+    }
+
+    .button.pressing {
+        background:#00ff00;
+    }
+
+    .button.pressed {
+        background:#ff0000;
+    }
+
+
+</style>
+
+<div class="button">
+    기본 상태
+</div>
+
+
+<script type="text/javascript">
+
+
+    $('.button').initButton().on(Lia.Component.Event.STATUS_CHANGED /* 'lia:statuschanged' */, function(e){
+
+        var status = e.status;
+        var jThis = $(this);
+
+        if ( status == Lia.Component.Value.Button.Status.HOVERING /* 'hovering' */ ) {
+
+            // 마우스 올라간 상태
+            jThis.text('마우스 올라감');
+
+        } else if ( status == Lia.Component.Value.Button.Status.PRESSING /* 'pressing' */ ) {
+
+            // 마우스 클릭한 상태
+            jThis.text('마우스 PRESSING');
+
+        } else if ( status == Lia.Component.Value.Button.Status.PRESSED /* 'pressed' */ ) {
+
+            // 마우스 눌려졌다고 체크된 상태
+            jThis.text('마우스 PRESSED');
+
+        } else if ( status == Lia.Component.Value.Button.Status.DEFAULT /* 'default' */ ) {
+
+            // 마우스 눌려졌다고 체크된 상태
+            jThis.text('기본 상태');
+        }
+
+    }).on('click', function() {
+
+        // 클릭하면 눌려진 상태로 체크 반대면 체크 해제
+        var jThis = $(this);
+        jThis.buttonPressed(!jThis.buttonPressed());
+    });
+
+</script>

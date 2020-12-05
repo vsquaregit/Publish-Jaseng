@@ -1,0 +1,89 @@
+
+<div id="checkBox_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var section1 = new Triton.Section({
+        appendTo : $('#checkBox_ex')
+    });
+
+    var section2 = new Triton.Section({
+        appendTo : $('#checkBox_ex'),
+        css : {
+            'margin-top' : '10px'
+        }
+    });
+
+    var section3 = new Triton.Section({
+        appendTo : $('#checkBox_ex'),
+        css : {
+            'margin-top' : '10px'
+        }
+    });
+
+    new Triton.CheckBox({
+        appendTo : section1,
+        content : '내용',
+        pressed : true,
+        css : {'margin-right' : '10px'},
+        onChecked : function (val) {
+
+            if ( val == 0 )
+                alert('체크 해제');
+            else
+                alert('체크');
+        }
+    });
+
+    new Triton.CheckBox({
+        appendTo : section1,
+        content : '내용',
+        css : {'margin-right' : '10px'},
+        onChecked : function (val) {
+
+            if ( val == 0 )
+                alert('체크 해제');
+            else
+                alert('체크');
+        }
+    });
+
+    var checkboxStatusNormal = new Triton.CheckBox({
+        appendTo : section2,
+        status : Triton.CheckBox.Status.NORMAL,
+        content : '내용2',
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.CheckBox({
+        appendTo : section2,
+        status : Triton.CheckBox.Status.PRESSED,
+        content : '내용2',
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.CheckBox({
+        appendTo : section2,
+        status : Triton.CheckBox.Status.INACTIVE,
+        content : '내용2',
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.CheckBox({
+        appendTo : section2,
+        status : Triton.CheckBox.Status.PRESSED_INACTIVE,
+        content : '내용2',
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.CheckBox({
+        appendTo : section3,
+        content : '내용',
+        theme : Triton.CheckBox.Theme.Toggle
+    });
+
+    checkboxStatusNormal.setStatus(Triton.CheckBox.Status.INACTIVE);
+
+</script>

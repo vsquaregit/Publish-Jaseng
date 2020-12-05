@@ -1,0 +1,51 @@
+
+<div id="foldablePanel_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var foldablePanel1 = new FoldablePanel({
+        appendTo : $('#foldablePanel_ex'),
+        title : 'foldablePanel_Title_1',
+        folded: true
+    });
+
+    var firstDetailTable = new Triton.DetailTable({
+        appendTo : foldablePanel1
+    });
+
+    {
+        firstDetailTable.appendRow({});
+        firstDetailTable.appendKeyColumn({
+            content : '첫 상세 테이블'
+        });
+        firstDetailTable.appendValueColumn({
+            content : '첫 상세 테이블 VALUE'
+        });
+    }
+
+    var foldablePanel2 = new FoldablePanel({
+        appendTo : $('#foldablePanel_ex'),
+        title : 'foldablePanel_Title_2',
+        folded: false,
+        css : {
+            'margin-top' : '10px'
+        }
+    });
+
+    var firstDetailTable2 = new Triton.DetailTable({
+        appendTo : foldablePanel2
+    });
+
+    {
+        firstDetailTable2.appendRow({});
+        firstDetailTable2.appendKeyColumn({
+            content : '두번째 상세 테이블'
+        });
+        firstDetailTable2.appendValueColumn({
+            content : '두번째 상세 테이블 VALUE'
+        });
+    }
+
+</script>

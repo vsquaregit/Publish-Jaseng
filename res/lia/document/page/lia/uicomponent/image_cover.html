@@ -1,0 +1,21 @@
+
+
+<div>
+    원본 이미지<br/>
+    <img src="/res/lia/document/page/lia/uicomponent/image_cover/image_cover.jpg" />
+</div>
+<div>
+    image_cover 적용 이미지<br/>
+    <div class="image_cover"
+         lia-src="/res/lia/document/page/lia/uicomponent/image_cover/image_cover.jpg"
+        style="width:50%;height:300px;position:relative;"></div>
+</div>
+
+<script type="text/javascript">
+
+    $('.image_cover').initImageCover();
+    $(window).on('resize', function() {
+        $('.image_cover').updateImageCover();
+    });
+
+</script>

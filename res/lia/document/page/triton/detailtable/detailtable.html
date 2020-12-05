@@ -1,0 +1,67 @@
+
+<div id="detailtable_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var panel = new Triton.Panel({
+        appendTo : $('#detailtable_ex')
+    });
+
+    var panel2 = new Triton.Panel({
+        appendTo : $('#detailtable_ex'),
+        css : {
+            'margin-top' : '10px' +
+            ''
+        }
+    });
+
+    var detailTable = new Triton.DetailTable({
+        appendTo : panel
+    });
+
+    var detailTable2 = new Triton.DetailTable({
+        appendTo : panel2,
+        keyColumnWidth : '100px'
+    });
+
+    {
+        detailTable.appendRow({});
+        detailTable.appendKeyColumn({
+            content : 'keyColumn'
+        });
+        detailTable.appendValueColumn({
+            content : 'valueColumn'
+        });
+    }
+
+    {
+        detailTable2.appendRow({});
+        detailTable2.appendKeyColumn({
+            content : 'second_keyColumn'
+        });
+        detailTable2.appendValueColumn({
+            content : 'second_valueColumn'
+        });
+    }
+
+    {
+        detailTable2.appendRow({});
+        detailTable2.appendKeyColumn({
+            content : 'second_keyCol_2'
+        });
+        detailTable2.appendValueColumn({
+            content : 'second_ValueCol_2'
+        });
+
+        detailTable2.appendItem(new Triton.FlatButton({
+            content : 'ITEM',
+            theme : Triton.FlatButton.Theme.Normal,
+            css : {
+                'margin-left' : '10px'
+            }
+        }));
+    }
+
+</script>

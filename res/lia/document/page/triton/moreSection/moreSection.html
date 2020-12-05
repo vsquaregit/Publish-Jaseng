@@ -1,0 +1,35 @@
+
+<div id="moreSection_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var moreSection = new Triton.MoreSection({
+        appendTo : $('#moreSection_ex'),
+        title : '숨겨져 있는 범위 보기',
+        titleFontSize : '15px',
+        onClick : function () {
+            alert('보기!');
+        }
+    });
+
+    var morePanel = new Triton.Panel({});
+
+    var moreDetailTable = new Triton.DetailTable({
+        appendTo: morePanel
+    });
+
+    moreSection.appendToMore(morePanel);
+
+    {
+        moreDetailTable.appendRow({});
+        moreDetailTable.appendKeyColumn({
+            content: '숨겨진 테이블 KeyColumn'
+        });
+        moreDetailTable.appendValueColumn({
+            content: '숨겨진 테이블 ValueColumn'
+        });
+    }
+
+</script>

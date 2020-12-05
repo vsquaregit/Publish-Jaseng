@@ -1,0 +1,137 @@
+<div id="wrapper">
+</div>
+
+<script>
+
+    // 초기화
+    var Requester = new $.Requester({
+
+        q : true,   // 큐잉 할지 안 할지
+        sync : false,   // sync 요청인지 아닌지
+        dataType : 'json',  // ajax dataType
+
+        responseCheckHandler : function (status, data, request) {
+
+            // 응답 체크하여 결과값 전달
+
+            if ( status == $.RequesterHelper.Status.ERROR || data == undefined ) {
+
+                return $.RequesterHelper.Status.ERROR;
+
+            } else if ( Lia.p(data, Response.Node.CODE) != Response.Code.SUCCESS ) {
+
+                return $.RequesterHelper.Status.ERROR;
+            }
+
+            return status;
+
+        },
+
+        onPreRequest : function (request) {
+
+            // 요청시작
+
+            var parameterMap = request['parameterMap'];
+            var newParameterMap = {};
+
+            if ( parameterMap != undefined ) {
+
+                for ( var key in parameterMap ) {
+
+                    var value = parameterMap[key];
+
+                    if ( value != undefined )
+                        newParameterMap[key] = value;
+                }
+            }
+
+            newParameterMap['device_type'] = 'p';
+
+            request['parameterMap'] = newParameterMap;
+        },
+
+        onRequestEnded : function (status, data, request) {
+
+            //요청 끝
+
+        }
+
+    });
+
+    // 호출
+    Requester.request({
+
+        onResponse : function (status, data, request) {
+
+            // 응답 함수
+            var passObject = request.object;
+
+        },
+
+        object : undefined, // 전달 파라미터
+        sync : false,   // 동기 전송 여부
+        q : true,   // 큐 이용 여부
+        method : 'post',    // 전송 메소드
+        dataType : 'json',  // 데이터 타입
+        parameterMap : {
+            // 파라미터
+        },
+
+        // file upload의 경우
+        onPregress : function (data, request) {
+
+            // 파일 올릴 때 응답 값
+//            var data = {
+//                event : event,
+//                position : position,
+//                total : total,
+//                percentComplete : percentComplete
+//            };
+
+        },
+        jForm : $('form')   // 파일 올릴 폼
+    });
+
+    RequestHelper.execute({
+
+        onExecute : function (execute) {
+
+            // 실행 함수
+            var passObject = request.object;
+        },
+
+        object : undefined
+    });
+
+    RequestHelper.abort();
+
+    // Requester
+    var ApiUrl = {
+
+        User: {
+            LOGIN : '/api/user/login',
+            LOGOUT : '/api/user/logout'
+        },
+
+        Book : {
+            GET_BOOK : '/api/book/getBook',
+            GET_BOOK_SUMMARY_LIST : '/api/book/getBookSummaryList',
+            REGISTER_AND_GET_BOOK : '/api/book/registerAndGetBook'
+        }
+    };
+
+    //함수 실행
+    Requester.func(function (request) {
+
+    }, object);
+
+    // ajax 요청
+    Requester.ajax(url, parameterMap, function (status, data, request) {
+
+    }, object);
+
+    // ajax 요청 blank
+    Requester.ajax(url, parameterMap, function (status, data, request) {
+
+    }, object);
+</script>

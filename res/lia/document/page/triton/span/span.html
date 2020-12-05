@@ -1,0 +1,51 @@
+<div id="span_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.Span({
+        appendTo: $('#span_ex'),
+        content: '기본 스팬',
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.Span({
+        appendTo: $('#span_ex'),
+        theme: Triton.Span.Theme.CommentCount,
+        content: '댓글 수 스팬',
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.Span({
+        appendTo: $('#span_ex'),
+        theme: Triton.Span.Theme.WriterAndRegisteredDate,
+        content: '작성자와 등록일시 스팬',
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.Span({
+        appendTo: $('#span_ex'),
+        theme: Triton.Span.Theme.UnderlineWhenHover,
+        content: '마우스오버시 밑줄 그리는 스팬',
+        css : {'margin-right' : '10px'},
+        onClick : function () {
+            alert('마우스오버시 밑줄 그리는 스팬');
+        }
+    });
+
+    new Triton.Span({
+        appendTo: $('#span_ex'),
+        theme: Triton.Span.Theme.CommentWriter,
+        content: '댓글 작성자 스팬',
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.Span({
+        appendTo: $('#span_ex'),
+        theme: Triton.Span.Theme.CommentRegisteredDater,
+        content: '댓글 등록일시 스팬',
+        css : {'margin-right' : '10px'}
+    });
+
+</script>

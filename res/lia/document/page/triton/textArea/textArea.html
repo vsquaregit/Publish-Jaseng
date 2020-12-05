@@ -1,0 +1,28 @@
+
+<div id="textarea_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.TextArea({
+        appendTo : $('#textarea_ex'),
+        theme : Triton.TextArea.Theme.Normal,
+        onKeyPress : function (e) {
+
+            if (e.which == Lia.KeyCode.ENTER) {
+                alert($(this).val());
+            }
+
+        }
+    });
+
+    new Triton.TextArea({
+        appendTo : $('#textarea_ex'),
+        theme : Triton.TextArea.Theme.Full,
+        css : {
+            'margin-top' : '10px'
+        }
+    });
+
+</script>

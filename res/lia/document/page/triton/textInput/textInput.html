@@ -1,0 +1,37 @@
+
+<div id="textinput_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.TextInput({
+        appendTo : $('#textinput_ex'),
+        theme : Triton.TextInput.Theme.Normal,
+        onKeyPress : function (e) {
+
+            if (e.which == Lia.KeyCode.ENTER) {
+                alert($(this).val());
+            }
+
+        }
+    });
+
+    new Triton.TextInput({
+        appendTo : $('#textinput_ex'),
+        theme : Triton.TextInput.Theme.Normal,
+        disabled : true,
+        css : {
+            'margin-left' : '10px'
+        }
+    });
+
+    new Triton.TextInput({
+        appendTo : $('#textinput_ex'),
+        theme : Triton.TextInput.Theme.Full,
+        css : {
+            'margin-top' : '10px'
+        }
+    });
+
+</script>

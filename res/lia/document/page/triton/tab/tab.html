@@ -1,0 +1,44 @@
+
+<div id="tab_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var tab = new Triton.Tab({
+        appendTo: $('#tab_ex'),
+
+        addButtonHidden: true,
+        listButtonHidden: true,
+        leftButtonHidden: true,
+        rightButtonHidden: true,
+
+        css: {'margin-top': '10px'},
+        onAdd: function (options) {
+        },
+
+        onBind: function (options, index) {
+
+            alert('bind')
+        }
+    });
+
+    tab.addTabButton({
+        'name': '첫번째 탭',
+        'css': {
+            'font-family': 'notokr-bold, NanumGothicBold',
+            'color': '#084897'
+        }
+    }, true, true);
+
+    tab.addTabButton({
+        'name': '두번째 탭',
+        'css': {
+            'font-family': 'notokr-bold, NanumGothicBold',
+            'color': '#084897'
+        }
+    }, true, true);
+
+    tab.setTabIndex(0, true);
+
+</script>

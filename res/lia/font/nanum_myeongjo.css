@@ -1,0 +1,24 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+@font-face {
+    font-family: 'NanumBarunMyeongjo';
+    font-style: normal;
+    font-weight: normal;
+    src: url('NanumMyeongjo.ttf');
+}
+
+@font-face {
+    font-family: 'NanumBarunMyeongjoBold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('NanumMyeongjoBold.ttf');
+}
+
+.nanum_myeongjo_bold {
+    font-family: 'NanumBarunMyeongjoBold', dotum;
+    font-weight: bold;
+}
+
+.nanum_myeongjo {
+    font-family: 'NanumBarunMyeongjo', dotum;
+}

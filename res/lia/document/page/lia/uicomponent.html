@@ -1,0 +1,645 @@
+<div>
+
+    <div class="page_title" triton-content="UI Component"></div>
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· Introduction</div>
+
+        <div class="paragraph_body">
+            Lia에서는 jQuery 플러그인 형식으로 구현된 UI Component를 제공합니다.<br/>
+            DOM객체의 class와 attribute를 이용하여 상태 및 정보를 저장합니다.<br/>
+            제공되는 UI Component는 다음과 같습니다.
+        </div>
+
+        <div class="paragraph_body">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">button</td>
+                    <td>마우스 이벤트를 이용한 버튼 컴포턴트</td>
+                </tr>
+                <tr>
+                    <td class="key_column">image_button</td>
+                    <td>마우스 이벤트에 따른 이미지 버튼 컴포넌트</td>
+                </tr>
+                <tr>
+                    <td class="key_column">image_cover</td>
+                    <td>표시될 영역에 이미지 비율 깨지지 않도록 표시 컴포넌트</td>
+                </tr>
+                <tr>
+                    <td class="key_column">loading_indicator</td>
+                    <td>로딩 버튼 컴포넌트</td>
+                </tr>
+
+                <tr>
+                    <td class="key_column">popup</td>
+                    <td>팝업 컴포넌트</td>
+                </tr>
+                <tr>
+                    <td class="key_column">popup.loading</td>
+                    <td>팝업+로딩 버튼 컴포넌트</td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+
+
+    <div class="paragraph">
+
+        <p class="paragraph_title">· 초기화</p>
+
+        <div class="paragraph_body">
+            Lia에서 제공하는 UI Component를 사용하려면 초기화를 하여야 합니다.<br/>
+            초기화 함수눈 init + 컴포넌트 명으로 네이밍 되었습니다. <br/>
+            초기화가 완료되면 inited class가 dom에 설정되며 초기화는 한번만 진행되며 두번째 이후 실행되면 무시합니다.<br/>
+            예시는 다음과 같습니다.
+        </div>
+
+        <div class="code_editor_sample_code" filename="init.html"></div>
+
+    </div>
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· button</div>
+
+        <div class="paragraph_body">
+            button은 마우스 이벤트에 대한 상태 ( hovering, pressing, pressed ) class로 설정해 주며 Lia.Component.Event.STATUS_CHANGED 이벤트가 상태가 변경될 때 실행됩니다.<br/>
+            다른 button 류 Component들도 동일하게 동작합니다.
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - 기본형
+            </div>
+
+            <div class="paragraph_body_sub_content">
+                <xmp><div class="button"></div></xmp>
+            </div>
+        </div>
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Event Flag Class
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">default</td>
+                    <td>기본 상태</td>
+                </tr>
+                <tr>
+                    <td class="key_column">hovering</td>
+                    <td>마우스가 해당 객체에 올라갔을 때</td>
+                </tr>
+                <tr>
+                    <td class="key_column">pressing</td>
+                    <td>마우스 버튼이 눌렸을 때</td>
+                </tr>
+                <tr>
+                    <td class="key_column">pressed</td>
+                    <td>버튼이 pressed 상태로 체크되었을 때 ( .buttonPressed 함수로 설정 )</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Functional Flag Class
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">no_bind</td>
+                    <td>초기화 될 때 마우스 이벤트 관련 이벤트에 매핑하지 않음</td>
+                </tr>
+                <tr>
+                    <td class="key_column">no_change</td>
+                    <td>button 관련 이벤트가 발생했을 때 관련 이벤트 처리를 하지 않음</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Event Flag Class
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">hovering</td>
+                    <td>마우스가 해당 객체에 올라갔을 때</td>
+                </tr>
+                <tr>
+                    <td class="key_column">pressing</td>
+                    <td>마우스 버튼이 눌렸을 때</td>
+                </tr>
+                <tr>
+                    <td class="key_column">pressed</td>
+                    <td>버튼이 pressed 상태로 체크되었을 때 ( .buttonPressed 함수로 설정 )</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Event
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">.on(Lia.Component.Event.STATUS_CHANGED, function(e) {} )</td>
+                    <td>
+                        버튼 상태값이 변경되면 실행됩니다.<br/>
+                        e.status에 상태값이 기록되어서 내려옵니다.<br/>
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="key_column">Lia.Component.Value.Button.Status.DEFAULT</td>
+                                <td>기본 상태</td>
+                            </tr>
+                            <tr>
+                                <td class="key_column">Lia.Component.Value.Button.Status.HOVERING</td>
+                                <td>마우스 올라간 상태</td>
+                            </tr>
+                            <tr>
+                                <td class="key_column">Lia.Component.Value.Button.Status.PRESSING</td>
+                                <td>마우스 누른 상태</td>
+                            </tr>
+                            <tr>
+                                <td class="key_column">Lia.Component.Value.Button.Status.PRESSED</td>
+                                <td>마우스 눌러진 상태</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Function
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+
+                <tr>
+                    <td class="key_column">.initButton()</td>
+                    <td>초기화</td>
+                </tr>
+                <tr>
+                    <td class="key_column">.buttonPressed()</td>
+                    <td>현재 pressed 상태인지 아닌지 리턴</td>
+                </tr>
+                <tr>
+                    <td class="key_column">.buttonPressed( pressed )</td>
+                    <td>pressed 상태를 설정</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Sample Code
+            </div>
+
+
+            <div class="paragraph_body_sub_content">
+                화면상에 button 객체를 초기화하고 css를 각 상태에 맞는 css를 설정하여 표시한다.<br/>
+                button의 상태 변경 status event를 받아 텍스트를 버튼에 설정한다.<br/>
+                클릭햇을 때 pressed 상태를 설정하거나 해제한다.
+            </div>
+
+        </div>
+
+        <div class="code_editor_sample_view" filename="button.html"></div>
+        <div class="code_editor_sample_code" filename="button.html"></div>
+
+    </div>
+
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· image_button</div>
+
+        <div class="paragraph_body">
+            image_button은 button의 기능올 함께 사용하는 UI Component로 button의 기능은 모두 사용 가능합니다.<br/>
+            button과 마찬가지로 마우스 이벤트에 대한 상태 ( hovering, pressing, pressed ) class로 설정해 주며 해당 상태에 따른 이미지를 표시하게 해줍니다.<br/>
+            또한 button과 동일하게 Lia.Component.Event.STATUS_CHANGED 이벤트가 상태가 변경될 때 실행됩니다.<br/>
+            <br/>
+            lia-src로 받은 이미지 url ( 없으면 src를 사용 )를 가지고 해당 상태에 맞는 이미지를 보여줍니다.<br/>
+            이미지 주소의 변경 형식은 정해져 있으며, _hovering.png, _pressed.png를 접미사로 사용하여 파일들을 보여주게 됩니다.<br/>
+            <br/>
+
+            DOM에 설정되어 있는 class가 image_button 만 존재한다면 pressing, pressed 상태일 때 _pressed.png 파일을 표시합니다.<br/>
+            DOM에 설정되어 있는 class가 image_button hover 이면 hovering 상태일때 _hovering.png 이미지를 보여주고 pressing, pressed 상태일 때 _pressed.png 파일을 표시합니다.<br/>
+            DOM에 설정되어 있는 class가 image_button press 이면 hovering, pressing, pressed 일때 _pressed.png 이미지를 보여주게 됩니다.<br/>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - 기본형
+            </div>
+
+            <div class="paragraph_body_sub_content">
+                <xmp><img class="image_button" lia-src="표시할 이미지 경로"/></xmp>
+            </div>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Attribute
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">lia-src</td>
+                    <td>표시할 이미지 경로, 없으면 src 속성을 가지고와서 사용함</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Functional Flag Class
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">no_binding</td>
+                    <td>초기화 될 때 마우스 이벤트 관련 이벤트에 매핑하지 않음</td>
+                </tr>
+                <tr>
+                    <td class="key_column">no_change</td>
+                    <td>button 관련 이벤트가 발생했을 때 관련 이벤트 처리를 하지 않음</td>
+                </tr>
+                <tr>
+                    <td class="key_column">hover</td>
+                    <td>hovering 상태일때 _hovering.png 이미지를 보여주고 pressing, pressed 상태일 때 _pressed.png 파일을 표시</td>
+                </tr>
+                <tr>
+                    <td class="key_column">press</td>
+                    <td> hovering, pressing, pressed 일때 _pressed.png 이미지를 표시</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Event Flag Class
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">hovering</td>
+                    <td>마우스가 해당 객체에 올라갔을 때</td>
+                </tr>
+                <tr>
+                    <td class="key_column">pressing</td>
+                    <td>마우스 버튼이 눌렸을 때</td>
+                </tr>
+                <tr>
+                    <td class="key_column">pressed</td>
+                    <td>버튼이 pressed 상태로 체크되었을 때 ( .buttonPressed 함수로 설정 )</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Event
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">.on(Lia.Component.Event.STATUS_CHANGED, function(e) {} )</td>
+                    <td>
+                        버튼 상태값이 변경되면 실행됩니다.<br/>
+                        e.status에 상태값이 기록되어서 내려옵니다.<br/>
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="key_column">Lia.Component.Value.Button.Status.DEFAULT</td>
+                                <td>기본 상태</td>
+                            </tr>
+                            <tr>
+                                <td class="key_column">Lia.Component.Value.Button.Status.HOVERING</td>
+                                <td>마우스 올라간 상태</td>
+                            </tr>
+                            <tr>
+                                <td class="key_column">Lia.Component.Value.Button.Status.PRESSING</td>
+                                <td>마우스 누른 상태</td>
+                            </tr>
+                            <tr>
+                                <td class="key_column">Lia.Component.Value.Button.Status.PRESSED</td>
+                                <td>마우스 눌러진 상태</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Function
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+
+                <tr>
+                    <td class="key_column">.initImageButton()</td>
+                    <td>초기화</td>
+                </tr>
+                <tr>
+                    <td class="key_column">.imageButtonPressed()</td>
+                    <td>현재 pressed 상태인지 아닌지 리턴</td>
+                </tr>
+                <tr>
+                    <td class="key_column">.imageButtonPressed( pressed )</td>
+                    <td>pressed 상태를 설정</td>
+                </tr>
+                <tr>
+                    <td class="key_column">.setImageButtonByStatus( status )</td>
+                    <td>status를 설정</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Sample Code
+            </div>
+
+
+            <div class="paragraph_body_sub_content">
+                image_button 기본형, image_button press, image_button hover 이 어떻게 동작하는지 순서대로 보여줍니다.
+            </div>
+
+        </div>
+
+        <div class="code_editor_sample_view" filename="image_button.html"></div>
+        <div class="code_editor_sample_code" filename="image_button.html"></div>
+
+    </div>
+
+
+
+
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· image_cover</div>
+
+        <div class="paragraph_body">
+            표시핧 영역에 맞추어 이미지 비율이 맞도록 긴 부분을 보여지지 않게 하여 화면상에 표시합니다.
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - 기본형
+            </div>
+
+            <div class="paragraph_body_sub_content">
+                <xmp><div class="image_cover" lia-src="표시할 이미지 경로"></div></xmp>
+            </div>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Attribute
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">lia-src</td>
+                    <td>표시할 이미지 경로</td>
+                </tr>
+                <tr>
+                    <td class="key_column">lia-error-src</td>
+                    <td>이미지 로딩이 에러났을 때 표시할 이미지</td>
+                </tr>
+                <tr>
+                    <td class="key_column">lia-width</td>
+                    <td>
+                        이미지 원보 사이즈 width, 입력되어 있지 않으면 img 태그의 load 이벤트에서 기록됨<br/>
+                        입력 하면 이미지 로딩 속도가 느릴 때 이미지 크기 조정을 화면상에서 보이지 않게 할 수 있음
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key_column">lia-height</td>
+                    <td>
+                        이미지 원보 사이즈 height, 입력되어 있지 않으면 img 태그의 load 이벤트에서 기록됨<br/>
+                        입력 하면 이미지 로딩 속도가 느릴 때 이미지 크기 조정을 화면상에서 보이지 않게 할 수 있음
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Event Flag Class
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <td class="key_column">image_error</td>
+                <td>이미지 로딩 에러일 때</td>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Function
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">.initImageCover()</td>
+                    <td>초기화</td>
+                </tr>
+                <tr>
+                    <td class="key_column">.updateImageCover</td>
+                    <td>현재 사이즈에 맞추어 이미지 표시 업데이트</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Sample Code
+            </div>
+
+
+            <div class="paragraph_body_sub_content">
+                원본 이미지와 image_cover 적용된 화면을 보여주며 창을 줄였다 키우면 화면 사이즈에 따라 어떤 식으로 이미지가 보여지는 지 확인 할 수 있습니다.
+            </div>
+
+        </div>
+
+        <div class="code_editor_sample_view" filename="image_cover.html"></div>
+        <div class="code_editor_sample_code" filename="image_cover.html"></div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· loading_indicator</div>
+
+        <div class="paragraph_body">
+            로딩 이미지를 순차적으로 표시합니다.<br/>
+            lia-src 속성의 url 형식을 가지고 lia-start-index 부터 lia-end-index 까지의 이미지를 순차적으로 보여주게 됩니다.
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - 기본형
+            </div>
+
+            <div class="paragraph_body_sub_content">
+                <xmp><img class="loading_indicator" lia-src="{img 주소 format:/loading/{index}.png}" lia-index="{현재 인덱스}" lia-start-index="{시작 인덱스}" lia-end-index="{끝인덱스}" alt="loading indicator"/></xmp>
+            </div>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Attribute
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">lia-src</td>
+                    <td>표시할 URL 형식, {index} 라고 표시된 부분을 표시할 인덱스 숫자로 처리한다.</td>
+                </tr>
+                <tr>
+                    <td class="key_column">lia-index</td>
+                    <td>현재 표시할 이미지</td>
+                </tr>
+                <tr>
+                    <td class="key_column">lia-start-index</td>
+                    <td>
+                        로딩을 표시할 시작 이미지 인덱스
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key_column">lia-end-index</td>
+                    <td>
+                        로딩을 표시할 마지막 이미지 인덱스
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Function
+            </div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="key_column">.initLoadingIndicator()</td>
+                    <td>초기화</td>
+                </tr>
+                <tr>
+                    <td class="key_column">.playLoadingIndicator()</td>
+                    <td>로딩 이미지 표시 시작</td>
+                </tr>
+                <tr>
+                    <td class="key_column">.pauseLoadingIndicator()</td>
+                    <td>로딩 이미지 표시 중지</td>
+                </tr>
+                <tr>
+                    <td class="key_column">.initAndPlayLoadingIndicator</td>
+                    <td>초기화 및 로딩 이미지 표시 시작</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - Sample Code
+            </div>
+
+            <div class="paragraph_body_sub_content">
+                img_1.png ~ img_8.png 까지 준비되어 있는 이미지로 로딩 이미지 표시 시작
+            </div>
+
+        </div>
+
+        <div class="code_editor_sample_view" filename="loading_indicator.html"></div>
+        <div class="code_editor_sample_code" filename="loading_indicator.html"></div>
+
+    </div>
+
+    <div class="paragraph">
+
+        <div class="paragraph_title">· popup</div>
+
+        <div class="paragraph_body">
+            popup를 div popup을 페이지에 표시하기 위한 인터페이스를 제공합니다.<br />
+            dim을 활용하여 popup의 뒷 배경을 표시하고 그 위에 popup를 표시합니다.<br />
+            dim 과 popup 양측에 서로 연결되는 popup과 dim을 설정해 주어야 합니다.
+        </div>
+
+        <div class="paragraph_body">
+
+            <div class="paragraph_body_sub_title">
+                - 기본형
+            </div>
+
+            <div class="paragraph_body_sub_content">
+                <xmp><div class="dim [cancelable]" lia-z-index="{z-index 값}" lia-popup="{연결된 popup Selector}" lia-opacity="{투명도 값}" lia-dim-background-color="{색깔}"></div></xmp>
+                <xmp><div class="popup" style="width:{popup width};height:{popup height}" lia-z-index="{z-index 값}" lia-position-top="{위치 값 고정 시}" lia-position="{위치 : fiexed, absolute}" lia-dim="{사용할 dim Selector}"></div></xmp>
+            </div>
+        </div>
+    </div>
+
+</div>

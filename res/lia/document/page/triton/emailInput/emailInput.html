@@ -1,0 +1,37 @@
+
+<div id="emailInput_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.EmailInput({
+        appendTo : $('#emailInput_ex'),
+        email : 'test@test.com',
+        nameOptions: {
+        },
+
+        domainOptions: {
+            optionList: Triton.EmailInput.DefaultValues.emailOptionList
+        },
+
+        directOptions: {
+        },
+        css : {'display' : 'flex', 'margin-bottom' : '10px'}
+    });
+
+    new Triton.EmailInput({
+        appendTo : $('#emailInput_ex'),
+        nameOptions: {
+        },
+
+        domainOptions: {
+            optionList: Triton.EmailInput.DefaultValues.militaryEmailOptionList
+        },
+
+        directOptions: {
+        },
+        css : {'display' : 'flex', 'margin-bottom' : '10px'}
+    });
+
+</script>

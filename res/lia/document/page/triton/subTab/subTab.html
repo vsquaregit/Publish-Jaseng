@@ -1,0 +1,34 @@
+
+<div id="subtab_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var subTab = new Triton.SubTab({
+        appendTo: $('#subtab_ex'),
+        onBind: function (options, index) {
+
+            alert('bind')
+        }
+    });
+
+    subTab.addSubTabButton({
+        'name': '첫번째 서브탭',
+        'css': {
+            'font-family': 'notokr-bold, NanumGothicBold',
+            'color': '#084897'
+        }
+    }, true);
+
+    subTab.addSubTabButton({
+        'name': '두번째 서브탭',
+        'css': {
+            'font-family': 'notokr-bold, NanumGothicBold',
+            'color': '#084897'
+        }
+    }, true);
+
+    subTab.setSubTabIndex(0, true);
+
+</script>

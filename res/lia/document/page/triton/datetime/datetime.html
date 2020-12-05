@@ -1,0 +1,36 @@
+
+<div id="datetime_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var datatime_1 = new Triton.DatetimePicker({
+        appendTo : $('#datetime_ex'),
+        type : Triton.DatetimePicker.TYPE_DATETIME
+    });
+
+    new Triton.DatetimePicker({
+        appendTo : $('#datetime_ex'),
+        type : Triton.DatetimePicker.TYPE_DATE,
+        css : {
+            'margin-top' : '10px'
+        },
+        onSelect : function (val) {
+
+            alert('선택');
+        }
+    });
+
+    new Triton.DatetimePicker({
+        appendTo : $('#datetime_ex'),
+        type : Triton.DatetimePicker.TYPE_DEFAULT,
+        css : {
+            'margin-top' : '10px'
+        }
+    });
+
+    datatime_1.setDisabled(true);
+
+
+</script>

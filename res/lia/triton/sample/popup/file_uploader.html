@@ -1,0 +1,100 @@
+<style>
+
+    #file_uploader_popup > .alert_popup_title {
+        height: 47px;
+        background-color: #17539d;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #file_uploader_popup > .alert_popup_title > span {
+        line-height: 45px;
+        font-family: notokr-medium, NanumGothicBold;
+        color: #FFFFFF;
+    }
+
+    #file_uploader_popup > .alert_popup_title > img {
+        margin-top: 16px;
+        cursor: pointer;
+    }
+
+    #file_uploader_popup > .alert_popup_content {
+        background: #FFFFFF;
+        color: #575757;
+        text-align: center;
+        font-size: 14px;
+        font-family: notokr-medium, NanumGothicBold;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+
+    #file_uploader_popup > .alert_popup_content > img {
+        margin-bottom: 27px;
+    }
+
+    #file_uploader_popup > .alert_popup_content > p {
+    }
+
+    #file_uploader_popup > .alert_buttons {
+        background: #FFFFFF;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    #file_uploader_popup .alert_confirm_button {
+        height: 39px;
+        line-height: 39px;
+        padding: 0 25px;
+        font-size: 14px;
+        font-family: notokr-medium, NanumGothicBold;
+        color: #084897;
+        border: 1px solid #084897;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        behavior: url("/res/lia/vendor/pie/PIE.htc");
+        background-color: #ffffff;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #file_uploader_popup .alert_confirm_button.hovering {
+        background-color: #f2f6fa;
+    }
+
+    #file_uploader_popup .alert_cancel_button {
+        height: 39px;
+        line-height: 39px;
+        padding: 0 25px;
+        font-size: 14px;
+        font-family: notokr-medium, NanumGothicBold;
+        color: #ec4c4c;
+        border: 1px solid #ec4c4c;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        background-color: #ffffff;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #file_uploader_popup .alert_cancel_button.hovering {
+        background-color: #faf2f2;
+    }
+
+    #ui-datepicker-div {
+        z-index: 100009 !important;
+    }
+
+</style>
+<div class="dim" lia-popup="{next-popup}"></div>
+<div id="file_uploader_popup" class="popup" style="width:600px;" lia-dim="{prev-dim}">
+    <div class="alert_popup_title popup_title"><span class="alert_popup_title_text">파일 업로드</span>
+        <img src="/res/lia/triton/img/img_alert_popup_close.png" class="alert_popup_close_button right"></div>
+    <div class="alert_popup_content" style="height:310px;">
+        <iframe title="file uploader popup" class="file_uploader_popup_iframe" style="width:580px;height:300px;"></iframe>
+    </div>
+</div>
+

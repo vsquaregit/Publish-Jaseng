@@ -1,0 +1,71 @@
+<script>
+
+//    lia.js - 브라우저 체크
+    Lia.ieVersion = Lia.checkInternetExplorerVersion(); //ieVersion, -1이면 ie 아님, 나머지는 버젼
+    Lia.isMobile = Lia.checkMobile();   //true 이면 모바일 기기, false 이면 아님
+    Lia.checkiPhoneSeries();    //true 이면 iPhone, IPod, iPad
+    Lia.checkAndroid();     //true 이면 Android
+    Lia.checkChrome();      //true 이면 크롬
+    Lia.checkSafari();      //true 이면 사파리
+    Lia.checkFirefox();     //true 이면 firefox
+    Lia.checkOpera();       //true 이면 오페라
+
+//    lia.js - 유효성 체크
+    Lia.checkValidId( text );   // 올바른 아이디 체크, 숫자와 영문자 -_
+    Lia.checkValidName( name ); //올바른 이름 체크, 숫자, 영문자, -_ 한글
+    Lia.checkValidEmail( text );    //올바른 이메일 형식
+    Lia.checkValidDigit( text );    //숫자로만 이루어져 있는지
+    Lia.checkValidNumeric( text );  //숫자인지 체크
+
+//    페이지 관련
+    Lia.convertArrayToQueryString( array, type );   // 배열을 쿼리 스트링으로 만듦 ?A=B&B=C
+    Lia.convertQueryStringToArray( queryString, type ); // 쿼리 스트링을 배열로 변환
+    Lia.encodeUri( text, type );    // uri 인코딩
+    Lia.decodeUri( text, type );    // uri 디코딩
+    Lia.decodeUriSafety( text, type );  // uri 디코딩 try-catch 감쌈
+    Lia.extractGetParameterMap( type );    // 주소창에 있는 Get 파라미터 추출
+    Lia.extractGetParameterMapFromUrl( url, type );    // url에 있는 주소창에 있는 Get 파라미터 추출
+    Lia.redirect( url, {}, type );  // window.location.href로 이동
+
+    Lia.redirectForm( method, url, {} );    // 폼을 만들어서 이동
+    Lia.redirectPost( url, {} );    // 폼을 만들어서 POST 이동
+    Lia.redirectGet( url, {} ); // 폼을 만들어서 GET 이동
+    Lia.refresh( forceget );    // 페이지 리로딩 forceget = true
+
+//    객체 관련
+    Lia.convertListToMap( list, key );  // 리스트 키를 맵 형태로 만듦
+    Lia.convertListToListMap( list, key );  // 맵을 리스트 맵 리스트 안으로 만듦
+    Lia.deepCopy( object ); // 딥 카피
+    Lia.combine( toObject, fromObject );    // fromObject에 있는 value를 toObject으로
+    Lia.assocArraySize( array );    // array 배열 사이즈 구함
+
+    Lia.extractPropertyWithDefault( defaultValue, item, 'depth1', 'depth2', '...');     // 객체에서 추출, 없으면 defaultValue
+    Lia.pd();
+    Lia.extractProperty( item, 'depth1', 'depth2', '...');      // 객체에서 추출, 없으면 undefined
+    Lia.p();
+
+//    문자열 관련
+    Lia.ws2tag( text );     // Whitespace를 &nbsp 태그로 변환
+    Lia.ws2tagInHtml( text );   // Whitespace를 &nbsp 태그로 변환, 2칸 기준으로
+    Lia.nl2br( text );      // 개행 문자를 BR 태그로 변환
+    Lia.br2nl( text );      // BR태그를 개행문자로 변환
+
+    Lia.extractFileExt( file );     // 파일 확장자 추출, 추출 불가면 null
+    Lia.extractFilename( file );    // 파일 이름 추출, 추출 불가면 null
+
+    String.isNullOrWhitespace( text );  // Whitespace 거나 NULL이면 true 반환
+    String.isBlank( text );
+
+    text.endsWith( suffix );    // suffix로 끝나면 true
+    text.startsWith( suffix );  // suffix로 시작하면 true
+    text.trim();    // 좌우 공백제거
+
+//    기타
+    Lia.checkHourIn( startHour, endHour );  // 현재 시간이 해당 시간 내에 있는지 체크
+    Lia.checkDayOfWeekIn( startDay, endDay );   // 현재 시간이 해당 요일 안에 있는지 체크
+
+    Lia.scrollTo( y, duration, easing );    // y축 스크롤 이동
+    Lia.getScrollTop();     // y축 스크롤 위치 반환
+    Lia.getScrollLeft();     // x축 스크롤 위치 반환
+
+</script>

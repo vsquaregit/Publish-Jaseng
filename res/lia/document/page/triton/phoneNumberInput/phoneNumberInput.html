@@ -1,0 +1,54 @@
+
+<div id="phoneNumberInput_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.PhoneNumberInput({
+        appendTo : $('#phoneNumberInput_ex'),
+        number1Options: {
+            optionList: Triton.PhoneNumberInput.DefaultValues.cellPhoneNumber1OptionList,
+            onSelected : function (val) {
+
+                alert(val);
+            }
+        },
+        number2Options: {
+            form: {name: 'mobilePhoneNumber2'}
+        },
+        number3Options: {
+            form: {name: 'mobilePhoneNumber3'}
+        },
+        css : {'display' : 'flex', 'margin-bottom' : '10px'}
+    });
+
+    new Triton.PhoneNumberInput({
+        appendTo : $('#phoneNumberInput_ex'),
+        number1Options: {
+            optionList: Triton.PhoneNumberInput.DefaultValues.homePhoneNumber1OptionList
+        },
+        number2Options: {
+            form: {name: 'mobilePhoneNumber2'}
+        },
+        number3Options: {
+            form: {name: 'mobilePhoneNumber3'}
+        },
+        css : {'display' : 'flex', 'margin-bottom' : '10px'}
+    });
+
+    new Triton.PhoneNumberInput({
+        appendTo : $('#phoneNumberInput_ex'),
+        number1Options: {
+            optionList: Triton.PhoneNumberInput.DefaultValues.totalPhoneNumber1OptionList
+        },
+        number2Options: {
+            form: {name: 'mobilePhoneNumber2'}
+        },
+        number3Options: {
+            form: {name: 'mobilePhoneNumber3'}
+        },
+        css : {'display' : 'flex'}
+    });
+
+</script>

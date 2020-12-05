@@ -1,0 +1,27 @@
+
+<div id="textEditor_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var textEditor1 = new Triton.TextEditor({
+        appendTo : $('#textEditor_ex'),
+        css : {'margin-bottom' : '10px'}
+    });
+    textEditor1.initTextEditor();
+
+    var textEditor2 = new Triton.TextEditor({
+        appendTo : $('#textEditor_ex'),
+        theme : Triton.TextEditor.Theme.Comment,
+        css : {'margin-bottom' : '10px'}
+    });
+    textEditor2.initTextEditor();
+
+    var textEditor3 = new Triton.TextEditor({
+        appendTo : $('#textEditor_ex'),
+        theme : Triton.TextEditor.Theme.CommentList
+    });
+    textEditor3.initTextEditor();
+
+</script>

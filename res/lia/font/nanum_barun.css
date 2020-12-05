@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: normal;
+    src: url('NanumBarunGothic.eot');
+    src: local('NanumBarunGothic'), local('나눔바른고딕'), url('NanumBarunGothic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NanumBarunGothicBold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('NanumBarunGothicBold.eot');
+    src: local('NanumBarunGothicBold'), url('NanumBarunGothicBold.woff') format('woff');
+}
+
+.nanum_barun_bold, .font_bold {
+    font-family: 'NanumBarunGothicBold';
+}
+
+.nanum_barun {
+    font-family: 'NanumBarunGothic';
+}
+
+

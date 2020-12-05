@@ -1,0 +1,100 @@
+<script>
+
+/*파라미터 관련*/
+PageManager.getParameter(key, map); // map에 있는 key에 대한 파라미터를 들고옴, map 없으면 현재 파라미터 맵
+PageManager.getParameterMap(); //현재 파라미터 맵 반환
+PageManager.getParameterWithChecking(); //getParameter 공백이면 undefined 반환
+
+PageManager.getBeforeParameter(); //전 파라미터 맵에 있는 key에 대한 값 반환
+PageManager.getBeforeParameterMap(); //전 파라미터 맵 반환
+PageManager.getBeforeParameterWithChecking(); //getBeforeParameter 공백이면 undefined 반환
+
+<!-- 페이지 이동 관련 -->
+
+// 파라미터 맵 대로 이동
+PageManager.move(parameterMap);
+
+// 페이지 이동
+PageManager.go([page1, page2, page3], parameterMap, withCurrentParameter);
+PageManager.go(page1, parameterMap, withCurrentParameter);
+PageManager.goWithCurrentParameterMap(name, parameterMap);
+
+// 뒷 페이지 기준으로
+PageManager.goPage(page3, parameterMap, withCurrentParameter);
+PageManager.goPage([page2, page3], parameterMap, withCurrentParameter);
+PageManager.goPageWithCurrentParameterMap(name, parameterMap);
+
+// 현재 페이지 기준으로 파라미터만 바꿔서
+PageManager.goCurrentPage(parameterMap);
+
+// 현재 페이지 기준으로 파라미터도 따라서
+PageManager.goCurrentPageWithCurrentParameterMap(parameterMap);
+
+/*PageManager 초기화*/
+
+var Page = {};  // 전역변수로 선언
+
+Page.AdminList = {
+
+    jView : undefined,  // 뷰 객체 가지고 있음
+
+    getUserList : function (j, page, count) {
+
+        j.find('#list').empty();
+
+        Requester.ajaxWithoutBlank(ApiUrl.User.LIST, {
+            //파라미터
+            page : page,
+            count : count
+        }, function (status, data, request) {
+
+            if ( status != Requester.Status.SUCCESS )
+                return;
+
+            var j = Page.AdminList.jView;
+            var j = request.object;
+
+        },{
+            j : j
+        });
+    }
+};
+
+<!-- 페이지 자바스크립트 형식 -->
+    (function () {
+
+        return {
+
+            //초기화 함수
+            onInit : function (j) {
+
+                var page = this;
+
+                Page.AdminList.jView = j;
+            },
+
+            //변경 함수
+            onChange : function (j) {
+
+                var page = $.PageManager.getParameterWithChecking('page');
+                if ( page == undefined )
+                    page = 1;
+
+                var count = $.PageManager.getParameterWithChecking('count');
+                if ( count == undefined )
+                    count = AdminList.COUNT;
+
+                var isActivated = $.PageManager.getParameterWithChecking('is_activated');
+
+                Page.AdminList.getUserList(j, isActivated, page, count);
+            },
+
+            //해제 함수
+            onRelease : function (j) {
+
+                var page = this;
+            }
+        };
+    })();
+
+</script>

@@ -1,0 +1,58 @@
+
+<div id="separatetable_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var panel = new Triton.Panel({
+        appendTo : $('#separatetable_ex')
+    });
+
+    var detailTable = new Triton.DetailTable({
+        appendTo : panel
+    });
+
+    {
+        detailTable.appendRow({});
+        detailTable.appendKeyColumn({
+            content : 'keyColumn'
+        });
+
+        var separateTable1 = new Triton.SeparateTable({});
+
+        separateTable1.appendRow({});
+        separateTable1.appendColumn({ content : 'Left Column'});
+        separateTable1.appendColumn({ content : 'Right Column'});
+
+        detailTable.appendValueColumn({
+            content : separateTable1
+        });
+    }
+
+    {
+        detailTable.appendRow({});
+        detailTable.appendKeyColumn({
+            content : 'keyColumn2'
+        });
+
+        var separateTable2 = new Triton.SeparateTable({});
+
+        separateTable2.appendRow({});
+        separateTable2.appendColumn({
+            content : 'Left Column2'
+        });
+        separateTable2.appendColumn({
+            theme : Triton.SeparateTable.Column.Theme.,
+            content : new Triton.FlatButton({
+                content : '버튼',
+                theme : Triton.FlatButton.Theme.Normal
+            })
+        });
+
+        detailTable.appendValueColumn({
+            content : separateTable2
+        });
+    }
+
+</script>

@@ -1,0 +1,41 @@
+
+<div id="label_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.Label({
+        appendTo : $('#label_ex'),
+        content : '기본 라벨'
+    });
+
+    new Triton.Label({
+        appendTo : $('#label_ex'),
+        content : 'List 라벨',
+        theme : Triton.Label.Theme.ListFlag,
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.Label({
+        appendTo : $('#label_ex'),
+        content : '답변완료 글 라벨',
+        theme : Triton.Label.Theme.TitleNotAnswered,
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.Label({
+        appendTo : $('#label_ex'),
+        content : '답변미완료 글 라벨',
+        theme : Triton.Label.Theme.TitleAnswered,
+        css : {'margin-right' : '10px'}
+    });
+
+    new Triton.Label({
+        appendTo : $('#label_ex'),
+        content : '새로운 글 라벨',
+        theme : Triton.Label.Theme.TitleNew,
+        css : {'margin-right' : '10px'}
+    });
+
+</script>

@@ -1,0 +1,78 @@
+﻿
+body, input, textarea, select {
+    font-size: 13px;
+    font-family: notokr-regular, NanumGothic, dotum;
+}
+
+body {
+    min-width: 750px;
+}
+
+#mini_header {
+    width: 100%;
+    height: 47px;
+    background-color: #26549F;
+}
+
+#mini_header > #mini_title_label {
+    color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 47px;
+    font-family: notokr-regular, NanumGothic;
+}
+
+#mini_body {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#mini_menu_buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 136px;
+    border-right: 1px solid #E3E3E3;
+    height: 100%;
+}
+
+#mini_menu_buttons .mini_menu_button {
+    width: 115px;
+    height: 40px;
+    color: #5D5D5D;
+    cursor: pointer;
+    border: 1px solid #E3E3E3;
+    border-top: none;
+    border-right: none;
+    padding-left: 20px;
+    line-height: 40px;
+    font-size: 13px;
+    font-family: notokr-medium, NanumGothicBold;
+}
+
+#mini_menu_buttons .mini_menu_button:hover {
+    background-color: #F2F6FA;
+}
+
+#mini_menu_buttons .mini_menu_button.pressed {
+    color: #26549F;
+    background-color: #F2F6FA;
+}
+
+#mini_page {
+    position: relative;
+    top: 0;
+    padding-left: 137px;
+    box-sizing: border-box;
+    min-width: 900px;
+    min-height: 700px;
+}
+
+#mini_page > div {
+    padding: 20px;
+}
+
+#mini_page .body {
+    padding: 0;
+}

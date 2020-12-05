@@ -1,0 +1,74 @@
+
+<div id="combobox_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    var optionList = [
+        {name : '1', value : '1'},
+        {name : '2', value : '2'},
+        {name : '3', value : '3'}
+    ];
+
+    new Triton.ComboBox({
+        appendTo : $('#combobox_ex'),
+        theme : Triton.ComboBox.Theme.Normal,
+        mode : Triton.ComboBox.Mode.SELECT,
+        optionList : optionList,
+        onSelected : function (val) {
+            alert(val);
+        }
+    });
+
+    new Triton.ComboBox({
+        appendTo : $('#combobox_ex'),
+        theme : Triton.ComboBox.Theme.Full,
+        optionList : optionList,
+        css : {'margin-top' : '10px'},
+        onSelected : function (val) {
+            alert(val);
+        }
+    });
+
+    new Triton.ComboBox({
+        appendTo : $('#combobox_ex'),
+        theme : Triton.ComboBox.Theme.SubMenuTitle,
+        optionList : optionList,
+        css : {'margin-top' : '10px'},
+        onSelected : function (val) {
+            alert(val);
+        }
+    });
+
+    new Triton.ComboBox({
+        appendTo : $('#combobox_ex'),
+        theme : Triton.ComboBox.Theme.SubMenuTitleSelectWhite,
+        optionList : optionList,
+        css : {'margin-top' : '10px'},
+        onSelected : function (val) {
+            alert(val);
+        }
+    });
+
+    new Triton.ComboBox({
+        appendTo : $('#combobox_ex'),
+        theme : Triton.ComboBox.Theme.Category,
+        optionList : optionList,
+        css : {'margin-top' : '10px'},
+        onSelected : function (val) {
+            alert(val);
+        }
+    });
+
+    new Triton.ComboBox({
+        appendTo : $('#combobox_ex'),
+        theme : Triton.ComboBox.Theme.CategoryNotFirst,
+        optionList : optionList,
+        css : {'margin-top' : '10px'},
+        onSelected : function (val) {
+            alert(val);
+        }
+    });
+
+</script>

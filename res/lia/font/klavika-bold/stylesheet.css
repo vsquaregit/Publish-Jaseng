@@ -1,0 +1,5 @@
+@font-face {
+	font-family: 'klavika-bold';
+	src: url('./klavikaboldwebfont.eot');
+	src: local('klavikaboldwebfont'), url('./klavikaboldwebfont.woff') format('woff'), url('./klavikaboldwebfont.ttf') format('truetype');
+}

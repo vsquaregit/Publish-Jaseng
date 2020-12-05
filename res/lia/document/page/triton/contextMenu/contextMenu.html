@@ -1,0 +1,85 @@
+<div id="contextmenu_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    //    var manager = new Triton.ContextMenuPopupManager({
+    //        appendTo : $('#contextmenu_ex')
+    //    });
+    //
+    //    manager.setBindHandler(function (contextMenuPopupManager, object) {
+
+    var contextMenu = new Triton.ContextMenu({
+        theme: Triton.ContextMenu.Theme.ContextMenu.Text,
+        appendTo: $('#contextmenu_ex')
+    });
+
+    var contextMenu2 = new Triton.ContextMenu({
+//        theme: Triton.ContextMenu.Theme.ContextMenu.Text,
+        appendTo: $('#contextmenu_ex'),
+        css : {
+            'margin-top' : '30px'
+        }
+    });
+
+    contextMenu.addOnItemClick(function (item, contextMenu, object) {
+
+        var idx = item['idx'];
+
+        if (idx == 1) {
+
+            alert('컨텍스트 메뉴 클릭!');
+
+        }
+    });
+    
+    contextMenu2.addOnItemClick(function (item, contentMenu, object) {
+
+        var idx = item['idx'];
+
+        if (idx == 3) {
+
+            alert('컨텍스트 메뉴3 메뉴 클릭!');
+
+        } else if (idx == 4) {
+
+            alert('컨텍스트 메뉴4 메뉴 클릭!');
+
+        } else if (idx == 5) {
+
+            alert('컨텍스트 메뉴5 메뉴 클릭!');
+        }
+
+    });
+
+    contextMenu.add({
+        theme: Triton.ContextMenu.Theme.ContextMenu.Text,
+        content: '컨텍스트 메뉴1',
+        idx: 1
+    });
+
+    contextMenu2.add({
+        theme: Triton.ContextMenu.Theme.ContextMenuItem.Text,
+        content: '컨텍스트 메뉴3',
+        idx: 3
+    });
+
+    contextMenu2.add({
+        theme: Triton.ContextMenu.Theme.ContextMenuItem.TextNoPadding,
+        content: '컨텍스트 메뉴4',
+        idx: 4
+    });
+
+    contextMenu2.add({
+        theme: Triton.ContextMenu.Theme.ContextMenuItem.Button,
+        content: '컨텍스트 메뉴5',
+        idx: 5
+    });
+
+    //        return contextMenu;
+    //    });
+
+    //    manager.show($(this), undefined);
+
+</script>

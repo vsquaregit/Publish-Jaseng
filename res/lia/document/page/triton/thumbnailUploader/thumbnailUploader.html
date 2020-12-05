@@ -1,0 +1,27 @@
+
+<div id="thumbnailuploader">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.ThumbnailUploader({
+        appendTo : $('#thumbnailuploader'),
+        addClass : 'uploader_1'
+    });
+
+    new Triton.ThumbnailUploader({
+        appendTo: $('#thumbnailuploader'),
+        defaultFilename: 'defaultFilename',
+        addClass : 'uploader_2',
+        parameterMap: {
+            path: 'Data/Polaris/task',
+            subDirNameList: 'subDirNameList'
+        },
+        isMovieUploader : true,
+        css : {
+            'margin-top' : '10px'
+        }
+    });
+
+</script>

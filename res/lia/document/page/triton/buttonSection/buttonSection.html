@@ -1,0 +1,20 @@
+
+<div id="buttonsection_ex" style="width: 500px; border: 1px solid #e1e1e1; margin-top: 10px;">
+</div>
+
+
+<script type="text/javascript">
+
+    var buttonSection = new Triton.ButtonSection({
+        appendTo : $('#buttonsection_ex')
+    });
+
+    buttonSection.appendToRight(new Triton.FlatButton({
+        content : '오른쪽 배치'
+    }));
+
+    buttonSection.appendToLeft(new Triton.FlatButton({
+        content : '왼쪽 배치'
+    }));
+
+</script>

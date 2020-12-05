@@ -1,0 +1,63 @@
+<script>
+
+/*AjaxPopupManager 초기화*/
+var AjaxPopupManager = $.AjaxPopupManager;
+AjaxPopupManager.init({
+
+    popupListLayoutSelector: '#popup_layout_list',
+
+    //requester : Requester,
+
+    cssLoading: false,
+    htmlLoading: true,
+    jsLoading: true,
+
+    caching: undefined,
+    filePathCachingHandler: function (path, parameterMap, contentType) {
+        return true;
+    },
+
+    filePathFormatHandler: function (path, parameterMap) {
+        return path;
+    },
+    cssFilePathFormatHandler: function (path, parameterMap) {
+        return '/res/' + path + '.css';
+    },
+    htmlFilePathFormatHandler: function (path, parameterMap) {
+        return '/res/' + path + '.html';
+    },
+    jsFilePathFormatHandler: function (path, parameterMap) {
+        return '/res/' + path + '.js';
+    }
+});
+
+/*AjaxPopupManager 호출*/
+AjaxPopupManager.show(PopupUrl.IMAGE, {
+    url: url
+});
+
+/*AjaxPopupManager 자바스크립트 형식*/
+    (function () {
+
+        return {
+
+            // 초기화
+            onInit : function (jLayout, path, parameterMap, jPopupListLayout) {
+
+                var popup = this;
+            },
+
+            // 화면 표시 될 떄
+            onShow : function (jLayout, path, parameterMap, jPopupListLayout) {
+
+                var popup = this;
+            },
+
+            // 화면에서 제거 될 때
+            onHide : function (jLayout, path, parameterMap, jPopupListLayout) {
+
+                var popup = this;
+            }
+        };
+    })();
+</script>

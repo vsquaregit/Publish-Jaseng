@@ -1,0 +1,36 @@
+
+<div id="searcher_ex">
+</div>
+
+
+<script type="text/javascript">
+
+    new Triton.Searcher({
+        appendTo : $('#searcher_ex'),
+        searchOptionList : [
+            {name : '이름', value : '1'},
+            {name : '아이디', value : '2'}
+        ],
+        theme : Triton.Searcher.Theme.Normal,
+        onSearch : function (text, category) {
+
+            alert(text);
+            alert(category);
+        }
+    });
+
+    new Triton.Searcher({
+        appendTo : $('#searcher_ex'),
+        searchOptionList : [
+            {name : '이름', value : '1'},
+            {name : '아이디', value : '2'}
+        ],
+        theme : Triton.Searcher.Theme.Category,
+        onSearch : function (text, category) {
+
+            alert(text);
+            alert(category);
+        }
+    });
+
+</script>
