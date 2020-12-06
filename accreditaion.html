@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Expires" content="-1"/>
+    <meta http-equiv="Pragma" content="No-Cache"/>
+    <meta http-equiv="Cache-Control" content="No-Cache"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+
+    <title>Jaseng</title>
+
+    <!-- Font -->
+    <link rel="stylesheet" type="text/css" href="/res/lia/font/opensans/stylesheet.css?V=1065"  charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/res/lia/font/roboto_normal.css?V=1065"  charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/res/lia/font/notokr-medium/stylesheet.css?V=1065"  charset="UTF-8"/>
+
+    <!-- Lia / Vendor -->
+    <link rel="stylesheet" type="text/css" href="/res/lia/lia.css?V=1065"/>
+    <link rel="stylesheet" type="text/css" href="/res/lia/vendor/slick/slick.css?V=1065"/>
+
+    <!-- CSS ㅣ list -->
+    <link rel="stylesheet" type="text/css" href="/res/home/css/jaseng/common.css?V=1065" />
+    <link rel="stylesheet" type="text/css" href="/res/home/css/jaseng/page.css?V=1065" />
+    <link rel="stylesheet" type="text/css" href="/res/home/css/jaseng/home.css?V=1065" />
+
+</head>
+<body>
+
+
+
+<div id="wrapper">
+
+    <nav class="navbar subpage">
+        <div class="navbar_item nav_logo_wrapper">
+            <img class="nav_logo pc_show" src="/res/home/img/jaseng/common/img_header_logo_white.png" alt="Jaseng Medical Academy" />
+            <img class="nav_logo pc_hide" src="/res/home/img/jaseng/common/mobile/img_header_logo_white.png" alt="Jaseng Medical Academy" />
+            <img class="nav_logo subpage_logo" src="/res/home/img/jaseng/common/mobile/img_header_logo.png" alt="Jaseng Medical Academy" />
+        </div>
+
+        <ul class="navbar_item nav_menu_list pc_show">
+        </ul>
+
+        <div class="navbar_item navbar_controller pc_show">
+            <div class="navbar_controller_item search_wrapper">
+                <input class="nav_search_input" type="text" placeholder="Search for courses"/>
+                <button class="nav_btn_search"><img src="/res/home/img/jaseng/common/btn_search.png" alt="search"/></button>
+            </div>
+
+            <button class="navbar_controller_item nav_btn_signin">Sign In</button>
+        </div>
+
+        <div class="navbar_item navbar_resp">
+            <button class="navbar_resp_btn navbar_resp_search">
+                <img class="on_main" src="/res/home/img/jaseng/common/btn_search_white.png" alt="search"/>
+                <img class="on_subpage" src="/res/home/img/jaseng/common/gnb_search.png" alt="search"/>
+            </button>
+            <button class="navbar_resp_btn navbar_resp_hamburder">
+                <img class="on_main" src="/res/home/img/jaseng/common/gnb_menu_white.png" alt="menu"/>
+                <img class="on_subpage" src="/res/home/img/jaseng/common/gnb_menu.png" alt="menu"/>
+            </button>
+        </div>
+    </nav>
+
+    <div class="sub_menu pc_show">
+        <ul class="sub_menu_list">
+
+        </ul>
+    </div>
+
+    <section class="page1">
+        <div>
+            <header class="page_header">
+                <div class="container">
+                    <h1 class="subpage_title">Test</h1>
+                    <p class="breadcrumb">
+                    </p>
+                    <ul class="breadcrumb_submenu showing">
+                    </ul>
+                </div>
+            </header>
+
+            <div class="page_content_body">
+                <style>
+                    .accreditation_wrapper {
+
+                    }
+                    @media screen and (min-width:1360px) {
+                        .accreditation_wrapper {
+                            padding-top: 100px;
+                            padding-bottom: 100px;
+                        }
+                    }
+                    @media screen and (min-width:768px) and (max-width:1359px) {
+                        .accreditation_wrapper {
+                            padding-top: 60px;
+                            padding-bottom: 60px;
+                        }
+                    }
+                    @media screen and (max-width:767px) {
+                        .accreditation_wrapper {
+                            padding-top: 60px;
+                            padding-bottom: 60px;
+                        }
+                    }
+
+
+
+
+                    #accreditation {}
+                    #accreditation .credit_list {border-top: 2px solid #232323;}
+                    #accreditation .credit_list .credit_item{border-bottom: 1px solid #e5e5e5;}
+                    #accreditation .credit_list .credit_header {cursor: pointer;}
+                    #accreditation .credit_item .header_left {}
+                    #accreditation .credit_item .header_left .credit_title{font-family: "Open Sans SemiBold", sans-serif;margin: 0px;}
+                    #accreditation .credit_item .header_right{position: relative;}
+                    #accreditation .credit_item .header_right img{width: 16px;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);}
+                    #accreditation .credit_item .ico_fold {display: none;}
+                    #accreditation .credit_item.active .ico_fold {display: block;}
+                    #accreditation .credit_item.active .ico_collapse {display: none;}
+                    #accreditation .credit_item.active .credit_title {color: #003087;}
+                    #accreditation .credit_list .credit_item .credit_content{display: none;}
+                    #accreditation .credit_list .credit_item.active .credit_content{display: block;background: #f8f8f8;}
+
+                    #accreditation .logo_wrapper {background: white;display: inline-block;vertical-align: top;}
+                    #accreditation .credit_detail {display: inline-block;vertical-align: top;}
+                    #accreditation .credit_detail a{text-decoration: underline;word-break: break-all;color: #003087;}
+
+                    @media screen and (min-width:1360px) {
+                        #accreditation .credit_list {}
+                        #accreditation .credit_list .credit_item{}
+                        #accreditation .credit_list .credit_header {height: 80px;font-size: 0;}
+                        #accreditation .credit_item .header_left {display: inline-block;vertical-align: top;width: calc(100% - 75px); padding-left: 30px;}
+                        #accreditation .credit_item .header_left .credit_title{font-size: 18px;line-height: 80px;display: inline-block;vertical-align: middle;}
+                        #accreditation .credit_item .header_right {display: inline-block;vertical-align: top;width: 75px;height: 80px;}
+                        #accreditation .credit_list .credit_item.active .credit_content{padding: 40px;}
+                        #accreditation .logo_wrapper {width: 140px;height: 140px;position: relative;}
+                        #accreditation .logo_wrapper img{width: 100px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+                        #accreditation .credit_detail {width: calc(100% - 200px);margin-left: 55px;}
+                        #accreditation .credit_detail p {font-size: 16px;line-height: 26px;}
+                        #accreditation .credit_detail p:not(:last-child){margin-bottom: 16px;}
+                    }
+                    @media screen and (min-width:768px) and (max-width:1359px) {
+                        #accreditation .credit_list {}
+                        #accreditation .credit_list .credit_item{}
+                        #accreditation .credit_list .credit_header {height: 90px;padding: 0px 15px;font-size: 0;}
+                        #accreditation .credit_item .header_left {display: inline-block;vertical-align: top;width: calc(100% - 15px); margin-top: 27px;}
+                        #accreditation .credit_item .header_left .credit_title{font-size: 16px;line-height: 1.1;margin-top: 10px;display: inline-block;vertical-align: middle;}
+                        #accreditation .credit_item .header_right {display: inline-block;vertical-align: top;width: 15px;height: 90px;}
+                        #accreditation .credit_list .credit_item.active .credit_content{padding: 25px 15px;}
+                        #accreditation .logo_wrapper {width: 140px;height: 140px;position: relative;}
+                        #accreditation .logo_wrapper img{width: 100px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+                        #accreditation .credit_detail {width: calc(100% - 200px);margin-left: 55px;}
+                        #accreditation .credit_detail p {font-size: 16px;line-height: 26px;}
+                        #accreditation .credit_detail p:not(:last-child){margin-bottom: 16px;}
+                    }
+                    @media screen and (max-width:767px) {
+                        #accreditation .credit_list {}
+                        #accreditation .credit_list .credit_item{}
+                        #accreditation .credit_list .credit_header {position: relative;padding: 15px;font-size: 0;}
+                        #accreditation .credit_item .header_left {display: inline-block;vertical-align: top;width: calc(100% - 30px);}
+                        #accreditation .credit_item .header_left .credit_title{font-size: 16px;line-height: 1.1;margin-top: 5px;display: inline-block;vertical-align: middle;}
+                        #accreditation .credit_item .header_right {position: absolute;width: 15px;right: 15px;top: 50%;}
+                        #accreditation .credit_list .credit_item.active .credit_content{padding: 25px 15px;}
+
+                        #accreditation .logo_wrapper {display: block;margin: 0 auto;width: 140px;height: 140px;position: relative;margin-bottom: 16px;}
+                        #accreditation .logo_wrapper img{width: 100px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+                        #accreditation .credit_detail {display: block;}
+                        #accreditation .credit_detail p {font-size: 14px;line-height: 22px;}
+                        #accreditation .credit_detail p:not(:last-child){margin-bottom: 14px;}
+                    }
+
+                </style>
+
+                <div class="accreditation_wrapper container">
+
+                    <article id="accreditation">
+
+                        <div class="credit_list">
+                            <article class="credit_item active">
+                                <header class="credit_header">
+                                    <div class="header_left">
+                                        <h3 class="credit_title">ACCME CME</h3>
+                                    </div>
+                                    <div class="header_right">
+                                        <img class="ico_fold" src="/res/home/img/jaseng/common/arr_basic_up.png" alt="fold" />
+                                        <img class="ico_collapse" src="/res/home/img/jaseng/common/arr_basic_down.png" alt="open" />
+                                    </div>
+                                </header>
+                                <div class="credit_content">
+                                    <div class="logo_wrapper">
+                                        <img src="/res/home/img/jaseng/sub_a/img5_logo01.png" />
+                                    </div>
+                                    <div class="credit_detail">
+                                        <p>With accreditation by the Accreditation Council for Continuing Medical Education (ACCME), Jaseng Hospital of Korean Medicine is able to certify its educational programs for American Medical Association Physician Recognition Award (AMA PRA) Category 1 credits™. AMA PRA is recognized worldwide as the gold standard for lifelong medical learning. U.S. physicians use CME credit to demonstrate that they have participated in educational activities and obtained CME credit to document that they have met the requirements of state medical boards, medical specialty societies, specialty boards, hospital medical staff, the Joint Commission, and insurance companies.</p>
+                                        <p>In response, the AMA and ACCME collaborated to simplify CME activities for AMA PRA Category 1 Credit™ by sharing its values and implementing simplification encouraging innovation and flexibility in CME to ensure accredited activities meet education standards and are independent of conflicting interests.</p>
+                                        <p>Jaseng Hospital of Korean Medicine was accredited as an AACME education provisional provider in 2019. Jaseng Medical Academy is the first and only ACCME-accredited medical institution in Asia providing evidence-based medical education and training for integrative Korean medicine approaches to musculoskeletal disorders.</p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="credit_item">
+                                <header class="credit_header">
+                                    <div class="header_left">
+                                        <h3 class="credit_title">AHPRA/CMBA CPD</h3>
+                                    </div>
+                                    <div class="header_right">
+                                        <img class="ico_fold" src="/res/home/img/jaseng/common/arr_basic_up.png" alt="fold" />
+                                        <img class="ico_collapse" src="/res/home/img/jaseng/common/arr_basic_down.png" alt="open" />
+                                    </div>
+                                </header>
+                                <div class="credit_content">
+                                    <div class="logo_wrapper">
+                                        <img src="/res/home/img/jaseng/sub_a/img5_logo02.png" />
+                                    </div>
+                                    <div class="credit_detail">
+                                        <p>Every year, Australian traditional Chinese medicine practitioners are required to acquire a total of <b>20 CPD (continuing professional development) points</b> by the Australian Health Practitioner Regulation Agency (AHPRA) and the Chinese Medicine Board Australia (CMBA). Of these CPD points, <b>4 points must be related to topics on professional issues</b> such as ethical/lawful practice, professional boundaries, permitted advertising, infection prevention and control, and privacy and confidentiality.</p>
+                                        <p>For the most current information on CMBA CPD codes and guidelines, visit: <br/><a href="https://www.chinesemedicineboard.gov.au/codes-guidelines/faq/cpd.aspx" target="_blank">https://www.chinesemedicineboard.gov.au/codes-guidelines/faq/cpd.aspx</a></p>
+                                        <p>As of June 2020, there are a total of 4,921 traditional Chinese medicine practitioners practicing in Australia. View current CMBA registrant data here: <br/><a href="https://www.chinesemedicineboard.gov.au/About/Statistics.aspx">https://www.chinesemedicineboard.gov.au/About/Statistics.aspx</a></p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="credit_item">
+                                <header class="credit_header">
+                                    <div class="header_left">
+                                        <h3 class="credit_title">CAB CE</h3>
+                                    </div>
+                                    <div class="header_right">
+                                        <img class="ico_fold" src="/res/home/img/jaseng/common/arr_basic_up.png" alt="fold" />
+                                        <img class="ico_collapse" src="/res/home/img/jaseng/common/arr_basic_down.png" alt="open" />
+                                    </div>
+                                </header>
+                                <div class="credit_content">
+                                    <div class="logo_wrapper">
+                                        <img src="/res/home/img/jaseng/sub_a/img5_logo03.png" />
+                                    </div>
+                                    <div class="credit_detail">
+                                        <p>The Californian Acupuncture Board (CAB) requires acupuncturists to acquire a total of board-approved <b>50 CEUs (continuing education units) every 2 years.</b></p>
+                                        <p>
+                                            <b>Breakdown of 50 CEU credit composition</b><br/>A total of 25 CEUs (50%) must be live education courses (e.g. live seminars, live webinars) <br/><br/>
+                                            - &nbsp;&nbsp;Up to <b>25 CEUs (50%)</b> may be completed through distance education (e.g. online courses (video, audio, articles), correspondence courses)<br/>
+                                            - &nbsp;&nbsp;No more than <b>5 hours</b> of CE credit may be earned from courses in Category 2.
+                                        </p>
+                                        <p>All acupuncturists are required to retain CEU records for a minimum of 4 years.</p>
+
+                                        <p>For the most current information on CAB CEU codes and guidelines, visit: <br/><a href="https://www.acupuncture.ca.gov/licensees/ce_require.shtml" target="_blank">https://www.acupuncture.ca.gov/licensees/ce_require.shtml</a> </p>
+
+                                        <p>As of 2018, there are a total of 12,135 acupuncturists in California, and 37,886 active acupuncturists across 48 states in the U.S.</p>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+
+                    </article>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_top">
+                <div class="footer_info">
+                    <div class="footer_logo_wrapper">
+                        <img class="footer_logo pc_show" src="/res/home/img/jaseng/common/img_footer_logo.png" alt="Jaseng Medical Academy" />
+                        <img class="footer_logo pc_hide" src="/res/home/img/jaseng/common/mobile/img_footer_logo.png" alt="Jaseng Medical Academy" />
+                    </div>
+                    <div class="footer_contact">
+                        <address class="footer_address">536, Gangnam-daero, Gangnam-gu, Seoul, Korea</address>
+                        <div class="footer_telfax_wrapper">
+                            <ul class="footer_telfax">
+                                <li class="footer_tel">Fax <a href="fax:+8225460987">+82-2-546-0987</a></li>
+                                <li class="footer_fax">Tel <a href="tel:+8227501558">+82-2-750-1558</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer_providers_wrapper">
+                            <ul class="footer_providers">
+                                <li><a href="https://www.jaseng.co.kr/"><img src="/res/home/img/jaseng/common/img_footer_logo01.png" alt="Jaseng Center(자생한방병원)"></a></li>
+                                <li><a href="https://www.accme.org/"><img src="/res/home/img/jaseng/common/img_footer_logo02.png" alt="Accreditation Council for Continuing Medical Education | ACCME"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="footer_sitemap">
+                    <ul class="depth1_list">
+
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer_item footer_bottom">
+                <div class="footer_bottom_left">
+                    <ul class="footer_sns_list">
+                        <li><a href="#"><img src="/res/home/img/jaseng/common/ico_sns01.png" alt="Facebook"/></a></li>
+                        <li><a href="#"><img src="/res/home/img/jaseng/common/ico_sns02.png" alt="RSS"/></a></li>
+                        <li><a href="#"><img src="/res/home/img/jaseng/common/ico_sns03.png" alt="Youtube"/></a></li>
+                        <li><a href="#"><img src="/res/home/img/jaseng/common/ico_sns04.png" alt="E-mail"/></a></li>
+                        <li><a href="https://omoney.kbstar.com/quics?page=oeng#loading"><img src="/res/home/img/jaseng/common/ico_sns05.png" alt="KB Bank"/></a></li>
+                    </ul>
+
+                    <p class="footer_copyright">© Jaseng Medical Academy</p>
+                </div>
+
+
+                <ul class="footer_sub_nav">
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+
+                <div class="footer_bottom_right">
+                    <select class="footer_family_sites">
+                        <option selected>Family sites</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <div id="popup_layout_list"></div>
+
+
+    <div class="dim" id="loading_dim" lia-opacity="0" lia-popup="#loading_popup"></div>
+    <div class="popup loading" id="loading_popup" lia-dim="#loading_dim" lia-src="" lia-start-index="" lia-end-index=""></div>
+
+</div>
+
+
+<script src="/res/lia/vendor/vendor.js?V=1065" type="text/javascript" charset="utf-8"></script>
+<script src="/res/lia/lia.all.js?V=1065" type="text/javascript" charset="utf-8"></script>
+<script src="/res/lia/vendor/slick/slick.min.js?V=1065" type="text/javascript" charset="utf-8"></script>
+
+<!-- index.js -->
+<script src="/accreditaion.js?V=1065" type="text/javascript" charset="utf-8"></script>
+
+
+</body>
+</html>
+
+
