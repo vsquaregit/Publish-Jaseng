@@ -1,6 +1,8 @@
 /* Reset Style */
 
 * {box-sizing: border-box;}
+
+
 html, button, input {font-family: 'Open Sans Regular', sans-serif;color: #232323;}
 button, input, select { cursor: pointer; }
 
