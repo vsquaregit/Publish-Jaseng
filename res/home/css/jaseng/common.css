@@ -323,3 +323,57 @@ button, input, select { cursor: pointer; }
         margin-bottom: 30px;
     }
 }
+
+
+/* H2 제목 */
+
+.headertext_2 {
+    font-family: "Open Sans SemiBold", sans-serif;
+    color: #232323;
+}
+
+@media screen and (min-width:1360px) {
+    .headertext_2 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1359px) {
+    .headertext_2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width:767px) {
+    .headertext_2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+.common_list {list-style-type: none;margin: 0;padding-left: 0;}
+.common_list li {position: relative;}
+.common_list li::before{content: " ";display: block;}
+.common_list li.special {color: #003087;}
+.common_list li.special::before{content: "※";display: inline-block;vertical-align: middle;background: transparent;width: 5px;height: 5px;margin-top: -10px;margin-left: -5px;}
+
+@media screen and (min-width:1360px) {
+    .common_list {padding-left: 18px;}
+    .common_list li{font-size: 16px;line-height: 26px;}
+    .common_list li::before{width: 3px;height: 3px;background: #232323;position: absolute;left: -15px;top: 50%;transform: translateY(-50%);}
+    .common_list li:not(:last-child) {margin-bottom: 5px;}
+    .common_list li.special{margin-top: 5px;}
+}
+@media screen and (min-width:768px) and (max-width:1359px) {
+    .common_list {padding-left: 18px;}
+    .common_list li{font-size: 14px;line-height: 24px;}
+    .common_list li::before{width: 3px;height: 3px;background: #232323;position: absolute;left: -15px;top: 50%;transform: translateY(-50%);}
+    .common_list li:not(:last-child) {margin-bottom: 5px;}
+
+}
+@media screen and (max-width:767px) {
+    .common_list {padding-left: 18px;}
+    .common_list li{font-size: 14px;line-height: 24px;}
+    .common_list li::before{width: 3px;height: 3px;background: #232323;position: absolute;left: -15px;top: 50%;transform: translateY(-50%);}
+    .common_list li:not(:last-child) {margin-bottom: 5px;}
+}
